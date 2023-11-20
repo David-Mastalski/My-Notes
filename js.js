@@ -6,7 +6,7 @@ const notePanel = document.querySelector('.notePanel')
 const noteArea = document.querySelector('.app__noteArea')
 const error = document.querySelector('.notePanel__error')
 
-let notes
+let notes = []
 const myNotes = JSON.parse(localStorage.getItem('myNotes'))
 
 const handleTogglePanel = (value) => {
