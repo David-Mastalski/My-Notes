@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyNotes - Zapisz i zapomnij o zapominaniu</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5e7b60bd46.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <div id="app" class="app">
+        <div class="app__menu">
+            <h1><i class="fas fa-sticky-note"></i>MyNotes</h1>
+            <div class="menuButtons">
+                <button class="menuButtons__button menuButtons__button--add"><i class="fas fa-plus"></i>Dodaj</button>
+                <button class="menuButtons__button menuButtons__button--deleteAll"><i class="fas fa-trash-alt"></i>Usuń wszystkie</button>
+            </div>
+        </div>
+        <div class="app__noteArea"></div>
+    </div>
+
+    <form action="#" method="post" class="notePanel">
+        <h2 class="notePanel__title">Dodaj notatkę</h2>
+        <label for="category" class="notePanel__inputLabel">Wybierz kategorię</label>
+        <select id="category" class="notePanel__selectElement">
+            <option value="0" selected disabled>-wybierz kategorię-</option>
+            <option value="shopping">Zakupy</option>
+            <option value="work">Praca</option>
+            <option value="other">Inne</option>
+        </select>
+
+        <label for="text" class="notePanel__inputLabel">Wpisz treść notatki</label>
+        <textarea id="noteContent" class="notePanel__textAreaElement"></textarea>
+        <p class="notePanel__error">Uzupełnij wszystkie pola!</p>
+
+        <div class="panelButtons">
+            <button type="submit" class="panelButtons__button panelButtons__button--save"><i class="fas fa-save"></i>Zapisz</button>
+            <button type="button" class="panelButtons__button panelButtons__button--cancel icon"><i class="far fa-window-close"></i> Anuluj</button>
+        </div>
+    </form>
+
+    <script src="js.js"></script>
+</body>
+</html>

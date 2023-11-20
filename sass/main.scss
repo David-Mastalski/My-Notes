@@ -1,0 +1,183 @@
+@use './colors' as *;
+@use './typography' as *;
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color: $background-color;
+    color: $font-color;
+    font-family: 'Nunito', sans-serif;
+    position: relative;
+}
+
+.app{
+    width: 100%;
+    min-height: 100dvh;
+    padding: 10px 24px;
+    &__menu{
+        margin-bottom: 40px;
+        padding: 12px 0;
+        h1{
+            font-size: 3rem;
+            font-weight: $font-bold; 
+        }
+    }
+    &__noteArea{
+        width: 100%;
+        display: grid;
+        grid-template-rows: auto;
+        row-gap: 10px;
+    }
+}
+
+.menuButtons,
+.panelButtons{
+    display: flex;
+    align-items: center;
+}
+
+.menuButtons__button,
+.panelButtons__button{
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    padding: 5px 15px;
+    transition: background-color .3s, color .3s;
+    &:hover{
+        background-color: $font-color;
+        color: $background-color;    
+    }
+    i{
+        margin-right: 7px;
+    }
+    &:not(:last-child){
+        margin-right: 15px;
+    }
+}
+
+.menuButtons{
+    margin-top: 20px;
+}
+
+.note{
+    width: 100%;
+    border-width: 2px;
+    border-style: solid;
+    &__body{
+        word-wrap: break-word;
+        word-break: break-all;
+        padding: 10px;
+        font-size: 1.4rem;
+    }
+    &--work{
+        background-color: rgb(255,243,0); 
+        border-color: rgb(255,243,0);
+    }
+    &--shopping{
+        background-color: rgb(82, 205, 0); 
+        border-color: rgb(82, 205, 0);
+    }
+    &--other{
+        background-color: rgb(164, 94, 250); 
+        border-color: rgb(164, 94, 250);
+    }
+}
+
+.noteHeader{
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+    padding: 20px;
+    
+    display: flex;
+    justify-content: space-between;
+    &__title{
+        font-size: 1.8rem;
+        font-weight: $font-bold;
+    }
+    &__deleteBtn{
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.8rem;
+    }
+}
+
+.notePanel{
+    background-color: #fff;
+    box-shadow: 0 0 10px black;
+    border-radius: 5px;
+    max-width: 600px;
+    width: 92%;
+    padding: 40px 0;
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &__title{
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+    &__inputLabel{
+        font-size: 1.2rem;
+        margin-bottom: 10px;     
+    }
+    &__error{
+        color: rgb(255, 0, 0);
+        font-size: 1.3rem;
+        font-weight: $font-bold;
+        margin-bottom: 20px;
+        visibility: hidden; 
+    }
+}
+
+.notePanel__selectElement,
+.notePanel__textAreaElement{
+    margin-bottom: 20px;
+    min-width: 80%;
+    max-width: 80%;
+    padding: 8px 10px;
+}
+
+.notePanel__textAreaElement{
+    margin-bottom: 15px; 
+    height: 100px;
+}
+
+@media screen and (min-width: 530px){
+    .app__noteArea{
+        grid-template-columns: repeat(auto-fill, 250px);
+        column-gap: 10px;
+    }
+    .note{
+        margin: 0 10px 10px 0;
+        max-width: 250px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .app__menu{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .menuButtons{
+        margin-top: 0px;
+    }
+}
