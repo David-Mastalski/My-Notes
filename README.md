@@ -24,4 +24,8 @@ MyNotes is a simple application designed for saving and storing notes in the bro
 - _**Navigate to the game directory and open the index.html file in a browser**_
 - _**Start using MyNotes!**_
 
-https://david-mastalski.github.io/My-Notes/
+## Demo from MyNotes
+<img src="https://github.com/David-Mastalski/My-Notes/blob/main/demo/demo1.png" alt="MyNotes Demo" width="100%">
+<img src="https://github.com/David-Mastalski/My-Notes/blob/main/demo/demo2.png" alt="MyNotes Demo" width="100%">
+
+### You can test the game yourself: [Click Here](https://david-mastalski.github.io/My-Notes/)
